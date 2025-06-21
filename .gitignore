@@ -1,0 +1,61 @@
+# Environment variables
+# Never commit secrets or environment-specific configuration.
+.env
+.env.*
+!/.env.example
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+*.so
+
+# Distribution / packaging
+build/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Test and coverage reports
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+nosetests.xml
+coverage.xml
+
+# IDE and editor files
+.idea/
+.vscode/
+*.swp
+*~
+
+# Application-specific files
+# Voice messages downloaded from Telegram
+*.oga
+
+# Log files
+*.log
+logs/
