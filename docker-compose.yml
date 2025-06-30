@@ -3,11 +3,14 @@ version: '3.8'
 services:
   bot:
     build: .
-    ports:
-      - "8001:8000"
     volumes:
-      - .:/app
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    env_file:
-      - .env
+      - ./app:/app/app  # Монтируем папку app для live reload
+      - ./.env:/app/.env  # Монтируем .env файл
+    environment:
+      - PYTHONPATH=/app
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    # Для разработки можно добавить:
+    # command: python -m app.main
+    # или для автоперезагрузки:
+    command: watchmedo auto-restart --directory=./app --pattern=*.py --recursive -- python -m app.main

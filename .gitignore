@@ -59,3 +59,4 @@ coverage.xml
 # Log files
 *.log
 logs/
+docs/
